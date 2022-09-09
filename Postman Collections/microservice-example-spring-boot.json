@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "5836563c-785d-47e7-bb8a-e2ed5977e1a3",
+		"name": "Microservice-Example-Spring-Boot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Department",
+			"_postman_id": "84d3d35e-fd95-4c28-9371-41c514b21bc1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departmentName\": \"IT\",\n    \"departmentAddress\": \"address\",\n    \"departmentCode\": \"IT-4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local1}}/departments/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"_postman_id": "d9435c85-b3db-4a8e-9c09-071e5377a256",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"firstName\": \"Dhaval\",\n\"lastName\": \"Solanki\",\n\"email\": \"dhaval@gmail.com\",\n\"departmentId\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{local2}}/users/"
+			},
+			"response": []
+		},
+		{
+			"name": "Create User Copy",
+			"_postman_id": "bd66c769-3ee3-4015-9b41-a6f6a50d9990",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local2}}/users/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Find Department By Id",
+			"_postman_id": "dee2d7af-dcb8-4274-a47a-988cd368f256",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{local1}}/departments/1"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e599dedf-2155-4231-a944-ed0f7fb432d2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "eda77f97-683b-4247-9d6a-894be8fa73d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "54405569-a0ca-48b8-9c08-487790d2f86d",
+			"key": "local1",
+			"value": "http://localhost:9001/api",
+			"type": "string"
+		},
+		{
+			"id": "533aa413-e037-474c-a3de-a273cbb5d3d2",
+			"key": "local2",
+			"value": "http://localhost:9002/api",
+			"type": "string"
+		}
+	]
+}
